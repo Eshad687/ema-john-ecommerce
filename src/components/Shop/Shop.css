@@ -8,4 +8,26 @@
     border-right: 1px solid rgb(219, 217, 217);
     
 }
+.search-bar{
+    background-color: rgba(0, 0, 0, 0.8);
+    line-height: 3em;
+    text-align: center;
+}
+.search-bar input{
+    width: 70%;
+    height: 2em;
+    border-radius: 5px;
+    
+}
 
+.search-bar > span{
+    font-size: 1.4em;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.count{
+    color:goldenrod ;
+    font-weight: bold;
+}

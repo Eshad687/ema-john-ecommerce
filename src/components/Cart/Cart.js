@@ -2,18 +2,25 @@ import React from 'react';
 import './Cart.css'
 const Cart = (props) => {
     let total = 0;
+    let totalQuantity = 0;
 
     for (const product of props.cart) {
-        total += product.price;
+        if (!product.quantity) {
+            product.quantity = 1;
+        }
+        total = total + product.price * product.quantity;
+        totalQuantity = totalQuantity + product.quantity;
     }
     const shipping = total > 0 ? 15 : 0;
     const totalBeforeTax = total + shipping;
     const tax = totalBeforeTax * 0.10;
     const grandTotal = totalBeforeTax + tax;
+
+    props.topOrderedItemCount(totalQuantity);
     return (
         <div className="cart">
             <h3>Order Summary</h3>
-            <p>Items Ordered: {props.cart.length}</p>
+            <p>Items Ordered: {totalQuantity}</p>
 
             <div>
                 <p className="cart-info"><small>Items:</small><small>${total.toFixed(2)}</small> </p>

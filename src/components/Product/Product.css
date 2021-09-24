@@ -23,3 +23,20 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.more-info{
+    display: flex;
+    justify-content: space-between;
+}
+.rating{
+    color: goldenrod;
+}
+
+.feature-value{
+
+    display: inline;
+    font-weight: 600;
+}
+
+.features{
+    color: gray;
+}

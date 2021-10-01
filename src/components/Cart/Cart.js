@@ -16,7 +16,7 @@ const Cart = (props) => {
     const tax = totalBeforeTax * 0.10;
     const grandTotal = totalBeforeTax + tax;
 
-    props.topOrderedItemCount(totalQuantity);
+    // props.topOrderedItemCount(totalQuantity);
     return (
         <div className="cart">
             <h3>Order Summary</h3>

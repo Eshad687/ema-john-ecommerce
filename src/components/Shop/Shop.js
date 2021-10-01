@@ -13,7 +13,7 @@ const Shop = () => {
 
     const [displayProducts, setDisplayProducts] = useState([]);
 
-    const [orderedItemsCount, setOrderedItemsCount] = useState(0);
+    // const [orderedItemsCount, setOrderedItemsCount] = useState(0);
 
     const element = <FontAwesomeIcon icon={faShoppingCart} />
 
@@ -37,6 +37,7 @@ const Shop = () => {
                 const addedProduct = products.find(product => product.key === key
                 )
                 if (addedProduct) {
+                    // adding a new property named quantity to the product
                     const quantity = storedData[key];
                     addedProduct.quantity = quantity;
                     addedProductCart.push(addedProduct);
@@ -64,20 +65,19 @@ const Shop = () => {
         setDisplayProducts(searchProducts);
     }
 
-    const topOrderedItemCount = count => {
-        setOrderedItemsCount(count);
-    }
-    const prac = () => {
+    // const topOrderedItemCount = count => {
+    //     setOrderedItemsCount(count);
+    // }
 
-    }
     return (
         <>
             <div className='search-bar'>
                 <input type="text" placeholder="Search Products..." onChange={searchEventHandler} />
-                <span onClick={prac}>{element} <span className="count">{orderedItemsCount}</span></span>
+                <span >{element}</span>
+                {/* <span >{element} <span className="count">{orderedItemsCount}</span></span> */}
 
             </div>
-            <div className="shop">
+            <div className="main-container">
                 <div className="product-container">
                     {
                         displayProducts.map(product => <Product
@@ -89,7 +89,8 @@ const Shop = () => {
 
                 </div>
                 <div className="cart-container">
-                    <Cart topOrderedItemCount={topOrderedItemCount} cart={cart}></Cart>
+                    <Cart cart={cart}></Cart>
+                    {/* <Cart topOrderedItemCount={topOrderedItemCount} cart={cart}></Cart> */}
 
                 </div>
 

@@ -13,9 +13,10 @@
 }
 .product-info .price{
     font-size: 1.5em;
+    color: maroon;
 }
 
-.product-info button{
+.product-info .button{
     background-color: goldenrod;
     width: 150px;
     height: 25px;

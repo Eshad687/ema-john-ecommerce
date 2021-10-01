@@ -10,7 +10,7 @@ const Product = (props) => {
     const featArray = [];
     for (const feature of features) {
 
-        featArray.push(<li><small>{feature.description}</small>: <small className="feature-value">{feature.value}</small></li>)
+        featArray.push(<li key={features.indexOf(feature)}><small>{feature.description}</small>: <small className="feature-value">{feature.value}</small></li>)
     }
 
     return (
@@ -23,7 +23,7 @@ const Product = (props) => {
                     <div>
                         <p className="price">${price}</p>
                         <p><small>only {stock} in stock - order soon</small></p>
-                        <button onClick={() => props.handleAddToCart(props.product)}>{element}add to cart</button>
+                        <button className="button" onClick={() => props.handleAddToCart(props.product)}>{element}add to cart</button>
                     </div>
                     <div>
                         <p><Rating

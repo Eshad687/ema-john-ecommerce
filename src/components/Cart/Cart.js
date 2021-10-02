@@ -29,7 +29,9 @@ const Cart = (props) => {
                 <p className="cart-info"><small>Estimated Tax:</small><small>${tax.toFixed(2)}</small> </p>
                 <p className="cart-info"><span>Order Total:</span><span>${grandTotal.toFixed(2)}</span> </p>
             </div>
-            <button>Review your order</button>
+            <div>
+                {props.children}
+            </div>
 
 
 

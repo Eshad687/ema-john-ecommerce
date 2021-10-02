@@ -1,7 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router';
+
 import useCart from '../../hooks/useCart';
 import useProducts from '../../hooks/useProducts';
-import { removeFromDb } from '../../utilities/fakeDb';
+import { clearStorage, removeFromDb } from '../../utilities/fakeDb';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 
@@ -18,6 +20,17 @@ const OrderReview = () => {
         removeFromDb(productKey);
 
     }
+    const history = useHistory();
+    const handlePlaceOrder = () => {
+        history.push("/placeorder");
+
+        //emptying the ui
+        setCart([]);
+
+        //clearing the local storage
+        clearStorage();
+    }
+
     return (
         // getting classes from other component
         <div className="main-container">
@@ -31,7 +44,11 @@ const OrderReview = () => {
                 }
             </div>
             <div>
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}>
+
+                    <button onClick={handlePlaceOrder} className="cart-button">Place Order</button>
+
+                </Cart>
             </div>
 
         </div>

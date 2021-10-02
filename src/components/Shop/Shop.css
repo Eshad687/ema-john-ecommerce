@@ -19,15 +19,21 @@
     border-radius: 5px;
     
 }
+.order-link{
+    text-decoration: none;
+}
 
-.search-bar > span{
+.cart-logo{
     font-size: 1.4em;
     color: white;
-    margin-left: 20px;
-    cursor: pointer;
+    margin-left: 10px;
+  
 }
 
 .count{
     color:goldenrod ;
     font-weight: bold;
+   
+
 }
+
